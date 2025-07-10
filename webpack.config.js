@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
 
 module.exports = (env, argv) => {
@@ -23,10 +22,29 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: [
-            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
-            "css-loader",
-            "postcss-loader",
+            "style-loader",
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 1,
+              },
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  plugins: [require("tailwindcss"), require("autoprefixer")],
+                },
+              },
+            },
           ],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          type: "asset/resource",
+          generator: {
+            filename: "./fonts/[name][ext]",
+          },
         },
       ],
     },
@@ -46,7 +64,6 @@ module.exports = (env, argv) => {
         inject: "body",
       }),
       new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/ui/]),
-      ...(isProduction ? [new MiniCssExtractPlugin()] : []),
     ],
   };
 };
