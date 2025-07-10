@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}", "./src/**/*.html"],
   theme: {
     extend: {
+      fontFamily: {
+        kakao: ["KakaoSmallSans", "sans-serif"],
+      },
       colors: {
         figma: {
           blue: "#18A0FB",
