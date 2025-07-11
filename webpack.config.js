@@ -20,6 +20,14 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
         },
         {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          loader: "url-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "assets/",
+          },
+        },
+        {
           test: /\.css$/,
           use: [
             "style-loader",
