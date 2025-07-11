@@ -1,0 +1,4 @@
+const FIGMA_WIDTH = 320;
+const FIGMA_HEIGHT = 384;
+
+export { FIGMA_HEIGHT, FIGMA_WIDTH };
