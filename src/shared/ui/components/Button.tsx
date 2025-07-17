@@ -6,6 +6,7 @@ interface ButtonProps {
   label: string;
   onClick: () => void;
   disabled?: boolean;
+  className?: string;
 }
 
 const styles: Record<ButtonVariant | Disabled, string> = {
@@ -16,12 +17,18 @@ const styles: Record<ButtonVariant | Disabled, string> = {
   disabled: "border-1 text-secondary-base cursor-not-allowed opacity-50",
 };
 
-export const Button = ({ variant, label, onClick, disabled }: ButtonProps) => {
+export const Button = ({
+  variant,
+  label,
+  onClick,
+  disabled,
+  className,
+}: ButtonProps) => {
   return (
     <button
       className={`w-auto font-body rounded-md px-12 py-8 ${
         styles[disabled ? "disabled" : variant]
-      }`}
+      } ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
