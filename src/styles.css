@@ -33,7 +33,7 @@
 }
 
 body {
-  @apply w-screen h-screen m-0 p-12 box-border font-kakao border-border text-sm text-text bg-background;
+  @apply w-screen h-screen box-border font-kakao border-border text-sm text-text bg-background;
   background: transparent;
   line-height: 1.5;
   user-select: none;
