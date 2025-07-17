@@ -1,4 +1,4 @@
-import { FIGMA_HEIGHT, FIGMA_WIDTH } from "./consts";
+import { FIGMA_HEIGHT, FIGMA_WIDTH } from "./shared/consts";
 
 interface UIToPluginMessage {
   type: string;
