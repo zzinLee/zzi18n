@@ -32,11 +32,9 @@ module.exports = {
         extrabold: "800",
       },
       colors: {
-        neutral: {
-          background: "#FFFFFF",
-          text: "#111827",
-          border: "#E5E7EB",
-        },
+        background: "#FFFFFF",
+        text: "#111827",
+        border: "#E5E7EB",
         state: {
           error: "D9534F",
           success: "3BC55F",
@@ -45,7 +43,7 @@ module.exports = {
         },
         primary: {
           base: "#0088DD",
-          hover: "18A0FB",
+          hover: "#18A0FB",
         },
         secondary: {
           base: "#6B7280",
